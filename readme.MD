@@ -1,0 +1,1 @@
+Reason for existence: https://gitlab.com/gitlab-org/gitlab/issues/5338
