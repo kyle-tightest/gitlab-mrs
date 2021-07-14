@@ -31,6 +31,10 @@ url = "https://gitlab.com/api/v4/merge_requests?scope=all&state=opened&approver_
 
 def getMRsWaitingForMyApproval():
     result = requests.get(url, verify=False, headers={'PRIVATE-TOKEN': args.token})
+    
+    if result.status_code != 200:
+        exit('Can not access merge requests list. Reposnse code: ' + str(result.status_code))
+        
     try:
         data = result.json()
     except:
